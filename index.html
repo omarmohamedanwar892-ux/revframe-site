@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Revframe — Production Studio, Cairo</title>
+<meta name="description" content="Revframe is a Cairo production studio covering automotive launches, motorsport, concerts, music videos, events and fashion. Full coverage contracts in Egypt and video editing for clients in MENA, the US, Canada and Europe.">
+<meta property="og:title" content="Revframe — Production Studio, Cairo">
+<meta property="og:description" content="Automotive, concerts, music videos, events and fashion. Full coverage contracts and remote video editing.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://revframestudio.com/">
+<meta name="theme-color" content="#EDECE8">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23111'/%3E%3Cpath d='M18 46V18h16a10 10 0 0 1 0 20h-6l10 8' fill='none' stroke='%23EDECE8' stroke-width='6'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400;62..125,500;62..125,600;62..125,800;62..125,900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="top" id="top">
+  <div class="top__left"><span class="rec" aria-hidden="true"></span><span class="mono">Cairo — Egypt</span></div>
+  <nav class="top__nav" aria-label="Main">
+    <a href="#work">Work</a>
+    <a href="#coverage">Coverage contracts</a>
+    <a href="#editing">Video editing</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <a class="logo" href="#top" aria-label="Revframe home">REVFRAME</a>
+  <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mobileNav" aria-label="Open menu"><span></span><span></span></button>
+</header>
+
+<div class="mobile-nav" id="mobileNav" hidden>
+  <a href="#work">Work</a>
+  <a href="#coverage">Coverage contracts</a>
+  <a href="#editing">Video editing</a>
+  <a href="#about">About</a>
+  <a href="#contact">Contact</a>
+</div>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero">
+    <figure class="hero__frame" id="heroReel" aria-label="Showreel">
+      <div class="hero__fallback" aria-hidden="true"></div>
+      <!-- the hero cycles through the niche loops below -->
+      <figcaption class="hero__cap">
+        <span class="mono" id="heroLabel">Showreel 2026</span>
+        <span class="mono" id="tc">00:00:00:00</span>
+      </figcaption>
+    </figure>
+    <div class="hero__text">
+      <h1>Cars, crowds<br>and culture, <em>in motion.</em></h1>
+      <div class="hero__side">
+        <p>Revframe is a Cairo production studio. We film launches, races, concerts and campaigns for brands across Egypt, and edit for clients around the world.</p>
+        <div class="btns">
+          <a class="btn" href="#contact">Book a meeting</a>
+          <a class="btn btn--ghost" href="#work">See the work</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATEMENT -->
+  <section class="statement">
+    <p class="serif-lg">We cover the whole thing. The reveal, the race day, the after-movie and the thirty vertical cuts that keep it alive for a month. One crew, one contract, delivered fast.</p>
+  </section>
+
+  <!-- WORK: scroll-driven niches. Background video crossfades per niche. -->
+  <section class="reel" id="work" aria-label="Our work by niche">
+    <div class="reel__bg" id="reelBg" aria-hidden="true">
+      <div class="reel__layer" data-id="automotive"><video muted loop playsinline preload="none" data-src="videos/automotive.mp4"></video></div>
+      <div class="reel__layer" data-id="concerts"><video muted loop playsinline preload="none" data-src="videos/concerts.mp4"></video></div>
+      <div class="reel__layer" data-id="music"><video muted loop playsinline preload="none" data-src="videos/music.mp4"></video></div>
+      <div class="reel__layer" data-id="events"><video muted loop playsinline preload="none" data-src="videos/events.mp4"></video></div>
+      <div class="reel__layer" data-id="fashion"><video muted loop playsinline preload="none" data-src="videos/fashion.mp4"></video></div>
+      <div class="reel__layer" data-id="commercial"><video muted loop playsinline preload="none" data-src="videos/commercial.mp4"></video></div>
+      <div class="reel__layer" data-id="social"><video muted loop playsinline preload="none" data-src="videos/social.mp4"></video></div>
+    </div>
+    <nav class="reel__index" id="reelIndex" aria-label="Niches">
+      <a href="#n-automotive" data-id="automotive">Automotive</a>
+      <a href="#n-concerts" data-id="concerts">Concerts</a>
+      <a href="#n-music" data-id="music">Music Videos</a>
+      <a href="#n-events" data-id="events">Events</a>
+      <a href="#n-fashion" data-id="fashion">Fashion</a>
+      <a href="#n-commercial" data-id="commercial">Commercial</a>
+      <a href="#n-social" data-id="social">Social</a>
+    </nav>
+    <div class="reel__panels" id="reelPanels">
+      <article class="panel" id="n-automotive" data-id="automotive">
+        <p class="mono panel__count">01 / 07</p>
+        <h2 class="panel__title">Automotive</h2>
+        <p class="panel__line">Launches, test drives, showrooms, track days and exotic car events.</p>
+        <ul class="panel__works">
+          <li><a href="#" target="_blank" rel="noopener"><b>Lynk &amp; Co 03 — Egypt Reveal</b><span>Launch event coverage · Watch ↗</span></a></li>
+        </ul>
+      </article>
+      <article class="panel" id="n-concerts" data-id="concerts">
+        <p class="mono panel__count">02 / 07</p>
+        <h2 class="panel__title">Concerts</h2>
+        <p class="panel__line">Multi-camera live films and same-week after-movies.</p>
+        <ul class="panel__works">
+          <li><a href="#" target="_blank" rel="noopener"><b>Cairokee — Live</b><span>Concert film · Watch ↗</span></a></li>
+          <li><a href="#" target="_blank" rel="noopener"><b>Tul8te — Live</b><span>Concert film · Watch ↗</span></a></li>
+        </ul>
+      </article>
+      <article class="panel" id="n-music" data-id="music">
+        <p class="mono panel__count">03 / 07</p>
+        <h2 class="panel__title">Music Videos</h2>
+        <p class="panel__line">Concept, shoot, edit and color for singles and full EPs.</p>
+        <ul class="panel__works">
+          <li><a href="#" target="_blank" rel="noopener"><b>Ouny — 7adana EP</b><span>Director &amp; editor · Watch ↗</span></a></li>
+          <li><a href="#" target="_blank" rel="noopener"><b>Showkey — Alby Mat</b><span>Video editor · Watch ↗</span></a></li>
+          <li><a href="#" target="_blank" rel="noopener"><b>Showkey — Aflt El3dad</b><span>Video editor · Watch ↗</span></a></li>
+        </ul>
+      </article>
+      <article class="panel" id="n-events" data-id="events">
+        <p class="mono panel__count">04 / 07</p>
+        <h2 class="panel__title">Events</h2>
+        <p class="panel__line">Brand nights, festivals and corporate events, delivered in 48 hours.</p>
+        <ul class="panel__works">
+          <li><a href="#" target="_blank" rel="noopener"><b>Alpha UAE</b><span>Event coverage · Dubai · Watch ↗</span></a></li>
+          <li><a href="#" target="_blank" rel="noopener"><b>Insomnia</b><span>Event after-movie · Watch ↗</span></a></li>
+        </ul>
+      </article>
+      <article class="panel" id="n-fashion" data-id="fashion">
+        <p class="mono panel__count">05 / 07</p>
+        <h2 class="panel__title">Fashion</h2>
+        <p class="panel__line">Campaign films and lookbooks that move like the clothes do.</p>
+        <ul class="panel__works">
+          <li><a href="#" target="_blank" rel="noopener"><b>Twist</b><span>Campaign film · Watch ↗</span></a></li>
+        </ul>
+      </article>
+      <article class="panel" id="n-commercial" data-id="commercial">
+        <p class="mono panel__count">06 / 07</p>
+        <h2 class="panel__title">Commercial</h2>
+        <p class="panel__line">Product films and brand spots, cut for TV, web and paid social.</p>
+        <ul class="panel__works">
+          <li><a href="#" target="_blank" rel="noopener"><b>Brand spots</b><span>30s · 15s · 6s cutdowns · Watch ↗</span></a></li>
+        </ul>
+      </article>
+      <article class="panel" id="n-social" data-id="social">
+        <p class="mono panel__count">07 / 07</p>
+        <h2 class="panel__title">Social</h2>
+        <p class="panel__line">Vertical-first content built for Reels and TikTok retention.</p>
+        <ul class="panel__works">
+          <li><a href="#" target="_blank" rel="noopener"><b>Samara</b><span>Vertical cut · Watch ↗</span></a></li>
+          <li><a href="#" target="_blank" rel="noopener"><b>Monthly content</b><span>Always-on social · Watch ↗</span></a></li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <!-- COVERAGE CONTRACTS -->
+  <section class="coverage" id="coverage">
+    <div class="split">
+      <div>
+        <h2 class="label">Full coverage contracts · Egypt</h2>
+        <p class="serif-md">One studio on call for every launch, event and campaign you run this year.</p>
+      </div>
+      <p class="lede">For automotive brands, event organizers, labels and fashion houses in Egypt. You get a dedicated crew that already knows your brand, priority dates, and every deliverable under one agreement.</p>
+    </div>
+
+    <div class="tiers">
+      <article class="tier">
+        <h3>Launch</h3>
+        <p class="tier__for mono">One event or reveal</p>
+        <ul>
+          <li>Pre-event teaser</li>
+          <li>Multi-camera event coverage</li>
+          <li>Hero film + 5 vertical cuts</li>
+          <li>Photo selects</li>
+          <li>Delivery in 72 hours</li>
+        </ul>
+      </article>
+      <article class="tier tier--key">
+        <h3>Season</h3>
+        <p class="tier__for mono">3 months · multiple events</p>
+        <ul>
+          <li>Everything in Launch, per event</li>
+          <li>Monthly social content package</li>
+          <li>Test drive and showroom films</li>
+          <li>Same crew on every shoot</li>
+          <li>Priority booking</li>
+        </ul>
+      </article>
+      <article class="tier">
+        <h3>Always-on</h3>
+        <p class="tier__for mono">12 months · exclusive</p>
+        <ul>
+          <li>Everything in Season</li>
+          <li>Yearly content calendar</li>
+          <li>Motorsport and owner events</li>
+          <li>Dedicated producer</li>
+          <li>Locked-in yearly rate</li>
+        </ul>
+      </article>
+    </div>
+    <div class="btns center">
+      <a class="btn" href="#contact" data-book>Book a meeting to scope your contract</a>
+    </div>
+  </section>
+
+  <!-- EDITING OUTSOURCING -->
+  <section class="editing" id="editing">
+    <div class="split">
+      <div>
+        <h2 class="label">Video editing · Remote</h2>
+        <p class="serif-md">Your footage, our edit suite in Cairo. Studio quality at rates that make sense.</p>
+      </div>
+      <div>
+        <p class="lede">We edit for agencies, brands and creators in MENA, the US, Canada and Europe. Send the footage, get a first cut fast, and work in your time zone.</p>
+        <ul class="regions mono">
+          <li>MENA</li><li>United States</li><li>Canada</li><li>Europe</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="services">
+      <div><h3>Short-form</h3><p>Reels, TikToks and Shorts cut for retention.</p></div>
+      <div><h3>Long-form</h3><p>YouTube episodes, documentaries and interviews.</p></div>
+      <div><h3>Music videos</h3><p>Performance and narrative edits, cut to the beat.</p></div>
+      <div><h3>Event recaps</h3><p>Same-week after-movies from your raw footage.</p></div>
+      <div><h3>Color grading</h3><p>Look development and finishing.</p></div>
+      <div><h3>Ad cutdowns</h3><p>30s, 15s and 6s versions for paid media.</p></div>
+    </div>
+
+    <ol class="steps">
+      <li><span class="mono">Step 1</span><b>Brief</b><p>Tell us the goal, the length and the deadline.</p></li>
+      <li><span class="mono">Step 2</span><b>Upload</b><p>Share footage by Drive, Dropbox or Frame.io.</p></li>
+      <li><span class="mono">Step 3</span><b>First cut</b><p>Usually within 72 hours.</p></li>
+      <li><span class="mono">Step 4</span><b>Revise &amp; deliver</b><p>Two revision rounds, then final masters.</p></li>
+    </ol>
+
+    <div class="btns center">
+      <a class="btn" href="#contact" data-quote>Get an editing quote</a>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <h2 class="label">About</h2>
+    <p class="serif-lg">Revframe is run by <span class="u">Belal Adel</span>, director and editor, and <span class="u">Omar Abdalla</span>, operations. We have filmed and cut for some of Egypt's biggest artists and stages, and we bring the same eye to the cars, launches and brands we cover now.</p>
+    <ul class="clients mono" aria-label="Artists and clients">
+      <li>Cairokee</li><li>Showkey</li><li>Ouny</li><li>Tul8te</li><li>Alpha UAE</li><li>Insomnia</li><li>Twist</li>
+    </ul>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <h2 class="huge">Let's talk.</h2>
+    <div class="contact__grid">
+      <div class="contact__info">
+        <p class="lede">Book a 20-minute call, or send a brief and we'll reply within one working day.</p>
+        <a class="btn" id="bookLink" href="https://cal.com/revframe" target="_blank" rel="noopener">Book a meeting</a>
+        <dl>
+          <dt class="mono">Email</dt><dd><a href="mailto:hello@revframestudio.com">hello@revframestudio.com</a></dd>
+          <dt class="mono">WhatsApp</dt><dd><a href="https://wa.me/201000000000" target="_blank" rel="noopener">+20 100 000 0000</a></dd>
+          <dt class="mono">Instagram</dt><dd><a href="https://instagram.com/revframe" target="_blank" rel="noopener">@revframe</a></dd>
+        </dl>
+      </div>
+
+      <form class="form" id="briefForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <div class="field"><label for="f-name">Name</label><input id="f-name" name="name" required autocomplete="name"></div>
+        <div class="field"><label for="f-company">Company</label><input id="f-company" name="company" autocomplete="organization"></div>
+        <div class="field"><label for="f-email">Work email</label><input id="f-email" name="email" type="email" required autocomplete="email"></div>
+        <div class="field"><label for="f-type">I'm interested in</label>
+          <select id="f-type" name="service">
+            <option>Full coverage contract (Egypt)</option>
+            <option>Single event / launch</option>
+            <option>Video editing (remote)</option>
+            <option>Music video</option>
+            <option>Something else</option>
+          </select>
+        </div>
+        <div class="field field--full"><label for="f-msg">Tell us about the project</label><textarea id="f-msg" name="message" rows="4" required></textarea></div>
+        <button class="btn" type="submit">Send brief</button>
+        <p class="form__status mono" id="formStatus" role="status"></p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <span class="logo logo--sm">REVFRAME</span>
+  <span class="mono">© 2026 Revframe Studio · Cairo, Egypt</span>
+  <a class="mono" href="#top">Back to top ↑</a>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
