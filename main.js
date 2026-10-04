@@ -3,7 +3,7 @@
    2. Hero showreel: cycles through the niche loops
    3. Work reel: background video crossfades as you scroll each niche
    4. Mobile menu, timecode, reveal-on-scroll
-   5. Brief form (Formspree)
+   5. Brief form (opens email app)
 */
 (function () {
   document.documentElement.classList.add("js");
@@ -149,17 +149,24 @@
   rv.forEach(el => rvIO.observe(el));
   requestAnimationFrame(() => rv.forEach(el => { if (el.getBoundingClientRect().top < innerHeight) el.classList.add("in"); }));
 
-  /* 5. Brief form -> Formspree */
+  /* 5. Brief form -> email (mailto) */
   const form = document.getElementById("briefForm");
   const status = document.getElementById("formStatus");
-  if (form) form.addEventListener("submit", async e => {
+  if (form) form.addEventListener("submit", e => {
     e.preventDefault();
-    if (form.action.includes("YOUR_FORM_ID")) { status.textContent = "Form not connected yet. Email hello@revframestudio.com"; return; }
-    status.textContent = "Sending…";
-    try {
-      const r = await fetch(form.action, { method: "POST", body: new FormData(form), headers: { Accept: "application/json" } });
-      if (r.ok) { form.reset(); status.textContent = "Thanks. We'll reply within one working day."; }
-      else status.textContent = "Couldn't send. Please email hello@revframestudio.com";
-    } catch { status.textContent = "Couldn't send. Please email hello@revframestudio.com"; }
+    const d = new FormData(form);
+    const v = k => (d.get(k) || "").toString().trim();
+    const subject = "New brief — " + v("service") + (v("company") ? " — " + v("company") : "");
+    const body = [
+      "Name: " + v("name"),
+      "Company: " + v("company"),
+      "Work email: " + v("email"),
+      "Service: " + v("service"),
+      "",
+      "Message:",
+      v("message")
+    ].join("\n");
+    location.href = "mailto:hello@revframestudio.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+    status.textContent = "Your email app is opening. Press Send to deliver your brief.";
   });
 })();
