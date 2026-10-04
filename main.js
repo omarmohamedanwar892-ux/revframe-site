@@ -10,7 +10,7 @@
   const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   /* ---------- CONFIG: edit these ---------- */
-  const BOOKING_URL = "https://cal.com/revframe"; // your Cal.com or Calendly link
+  const BOOKING_URL = "https://cal.com/revframestudio/30min"; // your Cal.com or Calendly link
   const NICHES = [ // order = hero showreel order. Files live in /videos
     { id: "automotive", label: "Automotive" },
     { id: "concerts",   label: "Concerts" },
