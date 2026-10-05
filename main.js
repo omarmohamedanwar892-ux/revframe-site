@@ -91,7 +91,8 @@
     });
     reel.querySelectorAll(".reel__index a").forEach(a => (links[a.dataset.id] = a));
     let active = null;
-    const load = id => { const L = layers[id]; if (L && L.v && !L.v.src && L.v.dataset.src) { L.v.src = L.v.dataset.src; } };
+    const mobile = matchMedia("(max-width: 700px)").matches; // phones use inline panel videos instead (3b)
+    const load = id => { if (mobile) return; const L = layers[id]; if (L && L.v && !L.v.src && L.v.dataset.src) { L.v.src = L.v.dataset.src; } };
     const setActive = id => {
       if (id === active) return;
       active = id;
@@ -118,6 +119,27 @@
       if (!e.isIntersecting) Object.values(layers).forEach(L => L.v && L.v.isConnected && L.v.pause());
       else if (active && layers[active].v && layers[active].v.isConnected) layers[active].v.play().catch(() => {});
     }, { rootMargin: "-40% 0px -40% 0px" }).observe(reel);
+  }
+
+  /* 3b. Phones: each niche panel gets its own inline video, played only while on screen */
+  if (reel && matchMedia("(max-width: 700px)").matches) {
+    const vidIO = new IntersectionObserver(es => es.forEach(e => {
+      const v = e.target;
+      if (e.isIntersecting) { if (!v.src) v.src = v.dataset.src; v.play().catch(() => {}); }
+      else v.pause();
+    }), { threshold: 0.25 });
+    reel.querySelectorAll(".panel").forEach(p => {
+      const v = document.createElement("video");
+      v.className = "panel__vid";
+      v.muted = true; v.loop = true; v.playsInline = true; v.autoplay = true;
+      ["muted", "loop", "playsinline", "autoplay"].forEach(a => v.setAttribute(a, ""));
+      v.preload = "metadata";
+      v.dataset.src = "videos/" + p.dataset.id + ".mp4";
+      v.setAttribute("aria-hidden", "true");
+      const line = p.querySelector(".panel__line");
+      line ? line.after(v) : p.appendChild(v);
+      vidIO.observe(v);
+    });
   }
 
   /* 4a. Mobile menu */

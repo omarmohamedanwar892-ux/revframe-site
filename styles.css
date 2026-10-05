@@ -170,6 +170,16 @@ dt{color:var(--mute);padding-top:3px}dd{margin:0;font-size:17px}
   .steps{grid-template-columns:1fr}
   .hero__frame{aspect-ratio:4/5;max-height:none}
 }
+@media (max-width:700px){
+  body{overflow-x:hidden}
+  .top{mix-blend-mode:normal;background:#121212;color:#EDECE8}
+  .menu-btn span{background:#EDECE8}
+  .hero__frame{aspect-ratio:16/9;max-height:none}
+  .reel__bg{display:none}
+  .panel{min-height:0;padding:72px var(--gut) 56px}
+  .panel__title{font-size:12vw;font-stretch:100%;letter-spacing:-.03em}
+  .panel__vid{width:calc(100% + 2 * var(--gut));max-width:none;margin-inline:calc(-1 * var(--gut));aspect-ratio:16/9;object-fit:cover;background:#1a1a1a}
+}
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important}
   .js .rv{opacity:1;transform:none}
