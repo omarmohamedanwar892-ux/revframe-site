@@ -185,8 +185,3 @@ dt{color:var(--mute);padding-top:3px}dd{margin:0;font-size:17px}
   .js .rv{opacity:1;transform:none}
 }
 
-/* logo mark */
-.logo{display:inline-flex;align-items:center;gap:10px}
-.logo__mark{height:24px;width:auto;display:block}
-.logo--sm .logo__mark{height:18px}
-.foot .logo__mark{filter:invert(1) hue-rotate(180deg)}
