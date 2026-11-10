@@ -40,6 +40,10 @@
       ["zaadinero-madrid.mp4", "Zaadinero — Madrid"],
       ["ziadzdan-type-shi.mp4", "Ziad Zdan — Type Shi"],
     ],
+    fashion: [
+      ["cruel-main.mp4", "Cruel — Main Film"],
+      ["cruel-teaser.mp4", "Cruel — Teaser"],
+    ],
     commercial: [
       ["crave-reel-1.mp4", "Crave — Reel 1"],
       ["crave-reel-2.mp4", "Crave — Reel 2"],
