@@ -94,8 +94,7 @@
     title.textContent = name;
     list.querySelectorAll("button").forEach((b, j) => b.setAttribute("aria-current", j === i ? "true" : "false"));
   }
-  window.dataLayer = window.dataLayer || [];
-  const track = (event, data) => window.dataLayer.push(Object.assign({ event }, data));
+  const track = (event, data) => { if (window.gtag) window.gtag("event", event, data); };
   document.addEventListener("click", e => {
     const a = e.target.closest("a"); if (!a) return;
     if (a.href.includes("wa.me")) track("whatsapp_click", { link_url: a.href });
