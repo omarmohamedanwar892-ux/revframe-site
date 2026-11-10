@@ -89,11 +89,22 @@
   function play(id, i) {
     const [file, name] = FILMS[id][i];
     vid.src = BASE + id + "/" + file;
+    track("film_play", { niche: id, film: name });
     vid.play().catch(() => {});
     title.textContent = name;
     list.querySelectorAll("button").forEach((b, j) => b.setAttribute("aria-current", j === i ? "true" : "false"));
   }
+  window.dataLayer = window.dataLayer || [];
+  const track = (event, data) => window.dataLayer.push(Object.assign({ event }, data));
+  document.addEventListener("click", e => {
+    const a = e.target.closest("a"); if (!a) return;
+    if (a.href.includes("wa.me")) track("whatsapp_click", { link_url: a.href });
+    else if (a.href.includes("cal.com")) track("book_call_click", { link_url: a.href });
+    else if (a.href.includes("instagram.com")) track("instagram_click", { link_url: a.href });
+    else if (a.href.startsWith("mailto:")) track("email_click", { link_url: a.href });
+  });
   function open(id) {
+    track("films_open", { niche: id });
     lastFocus = document.activeElement;
     niche.textContent = NAMES[id] + " · " + FILMS[id].length + (FILMS[id].length === 1 ? " film" : " films");
     list.innerHTML = FILMS[id].map(([, n], i) => `<li><button type="button" data-i="${i}"><span class="mono">${String(i + 1).padStart(2, "0")}</span>${n}</button></li>`).join("");
