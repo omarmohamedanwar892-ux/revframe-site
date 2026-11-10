@@ -40,6 +40,12 @@
       ["zaadinero-madrid.mp4", "Zaadinero — Madrid"],
       ["ziadzdan-type-shi.mp4", "Ziad Zdan — Type Shi"],
     ],
+    events: [
+      ["redbull-event.mp4", "Red Bull — Event"],
+      ["9elvn-event.mp4", "9elvn — Event"],
+      ["kahio-event.mp4", "Kahio — Event"],
+      ["day2-event.mp4", "Day 2 — Event"],
+    ],
     fashion: [
       ["cruel-main.mp4", "Cruel — Main Film"],
       ["cruel-teaser.mp4", "Cruel — Teaser"],
