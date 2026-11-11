@@ -61,6 +61,7 @@
       ["social-2.mp4", "Social — 2"],
     ],
   };
+  const FOLDERS = { events: "Events", fashion: "Fashion" }; // folder names on Hostinger (case-sensitive)
   const NAMES = { automotive: "Automotive", concerts: "Concerts", music: "Music Videos", events: "Events", fashion: "Fashion", commercial: "Commercial", social: "Social" };
 
   // modal
@@ -88,7 +89,7 @@
 
   function play(id, i) {
     const [file, name] = FILMS[id][i];
-    vid.src = BASE + id + "/" + file;
+    vid.src = BASE + (FOLDERS[id] || id) + "/" + file;
     track("film_play", { niche: id, film: name });
     vid.play().catch(() => {});
     title.textContent = name;
