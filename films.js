@@ -129,7 +129,7 @@
     if (!FILMS[id] || !FILMS[id].length) return;
     const b = document.createElement("button");
     b.type = "button"; b.className = "btn btn--films";
-    b.innerHTML = `Watch the films <span aria-hidden="true">▶</span> <span class="mono">${FILMS[id].length}</span>`;
+    b.innerHTML = `Watch the films <svg aria-hidden="true" width="11" height="12" viewBox="0 0 11 12" style="display:block"><path d="M0 0L11 6L0 12Z" fill="currentColor"/></svg> <span class="mono">${FILMS[id].length}</span>`;
     b.onclick = () => open(id);
     const line = p.querySelector(".panel__line");
     (line || p).insertAdjacentElement("afterend", b);
