@@ -121,24 +121,31 @@
     }, { rootMargin: "-40% 0px -40% 0px" }).observe(reel);
   }
 
-  /* 3b. Phones: each niche panel gets its own inline video, played only while on screen */
+  /* 3b. Phones: each niche panel gets its own light inline video (videos/m/), loaded ~2 screens early */
   if (reel && matchMedia("(max-width: 700px)").matches) {
-    const vidIO = new IntersectionObserver(es => es.forEach(e => {
+    const loadV = v => { if (!v.src) { v.src = v.dataset.src; v.preload = "auto"; v.load(); } };
+    const preIO = new IntersectionObserver(es => es.forEach(e => {
+      if (e.isIntersecting) { loadV(e.target); preIO.unobserve(e.target); }
+    }), { rootMargin: "200% 0px" });
+    const playIO = new IntersectionObserver(es => es.forEach(e => {
       const v = e.target;
-      if (e.isIntersecting) { if (!v.src) v.src = v.dataset.src; v.play().catch(() => {}); }
-      else v.pause();
+      if (e.isIntersecting) { loadV(v); v.play().catch(() => {}); } else v.pause();
     }), { threshold: 0.25 });
-    reel.querySelectorAll(".panel").forEach(p => {
+    reel.querySelectorAll(".panel").forEach((p, i) => {
+      const id = p.dataset.id;
       const v = document.createElement("video");
       v.className = "panel__vid";
       v.muted = true; v.loop = true; v.playsInline = true; v.autoplay = true;
       ["muted", "loop", "playsinline", "autoplay"].forEach(a => v.setAttribute(a, ""));
-      v.preload = "metadata";
-      v.dataset.src = "videos/" + p.dataset.id + ".mp4";
+      v.preload = "none";
+      v.poster = "videos/m/" + id + ".jpg";
+      v.dataset.src = "videos/m/" + id + ".mp4";
       v.setAttribute("aria-hidden", "true");
+      v.addEventListener("playing", () => v.classList.add("is-on"), { once: true });
       const line = p.querySelector(".panel__line");
       line ? line.after(v) : p.appendChild(v);
-      vidIO.observe(v);
+      if (i === 0) loadV(v); else preIO.observe(v);
+      playIO.observe(v);
     });
   }
 

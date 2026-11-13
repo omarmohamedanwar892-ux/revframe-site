@@ -212,3 +212,6 @@ html.films-open,html.films-open body{overflow:hidden}
   .films__stage,.films__video{max-height:58vh}
   .films__list{max-height:24vh}
 }
+
+/* mobile loops: poster shows instantly, video fades in */
+.panel__vid{background:#0d0d0d}
